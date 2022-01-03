@@ -1,5 +1,6 @@
 /*
         SISTEMA DE ACADEMIA: Athletica System
+	AUTORES: Francisca Kelen Ferreira dos Santos, Mateus Eug√™nio de Andrade, Thiago Natalys Ribeiro da Silva, Lucas Ant√¥nio Ferreira Almeida e Olavo Cartaxo.
 */
 
 //bibliotecas
@@ -8,7 +9,7 @@
 #include <string.h>
 #include <locale.h>
 
-//prototipo das funÁıes
+//prototipo das fun√ß√µes
 void menu();
 void cadastrar();
 void buscar();
@@ -26,15 +27,15 @@ typedef struct dados{
 }dados;
 
 /*
-	FunÁ„o menu est· num laÁo de repetiÁ„o, escolhe uma das opÁıes mostradas e È feito a chamada de funÁ„o.
-	Usamos o "switch" como estrutura condicional. A funÁ„ı È encerrado quando o usuario digitar 0.
+	Fun√ß√£o menu est√° num la√ßo de repeti√ß√£o, escolhe uma das op√ß√µes mostradas e √© feito a chamada de fun√ß√£o.
+	Usamos o "switch" como estrutura condicional. A fun√ß√£√µ √© encerrado quando o usuario digitar 0.
 */
 void menu(){
 
-    setlocale(LC_ALL, "Portuguese"); //acentuaÁ„o
+    setlocale(LC_ALL, "Portuguese"); //acentua√ß√£o
     int op;
     do{
-        system("color E"); //funÁ„o - cor amarelo
+        system("color E"); //fun√ß√£o - cor amarelo
         system("cls"); //limpa tela
         printf("===============================================================");
         printf("\n|                                                             |");
@@ -42,7 +43,7 @@ void menu(){
         printf("|            .....Menu Athletica System.....                  |");
         printf("\n|                                                             |");
         printf("\n");
-        printf("|          Digite a opÁ„o que deseja realizar:                |");
+        printf("|          Digite a op√ß√£o que deseja realizar:                |");
         printf("\n|                                                             |");
         printf("\n");
         printf("|          (1) - CADASTRAR um novo aluno(a)                   |");
@@ -59,7 +60,7 @@ void menu(){
         printf("===============================================================");
         printf("\n");
         printf("\n");
-        printf("OP«√O: ");
+        printf("OP√á√ÉO: ");
         scanf("%d",&op);
         getchar(); //limpar buffer de memoria
         switch(op){
@@ -81,14 +82,14 @@ void menu(){
 }
 
 /*
-	FunÁ„o para cadastrar os dados em um arquivo, usando o CPF como chave prim·ria
-	para evitar cÛpias e facilitar a busca, exclus„o e atualizaÁ„o dos dados nas demais funÁıes.
-	Todas as demais funÁıes dependem do arquivo criado nessa funÁ„o.
+	Fun√ß√£o para cadastrar os dados em um arquivo, usando o CPF como chave prim√°ria
+	para evitar c√≥pias e facilitar a busca, exclus√£o e atualiza√ß√£o dos dados nas demais fun√ß√µes.
+	Todas as demais fun√ß√µes dependem do arquivo criado nessa fun√ß√£o.
 */
 void cadastrar(){
 
-        system("color B");//funÁ„o para mudar a cor do texto
-        setlocale(LC_ALL, "Portuguese");//acentuaÁ„o
+        system("color B");//fun√ß√£o para mudar a cor do texto
+        setlocale(LC_ALL, "Portuguese");//acentua√ß√£o
         system("cls");//limpar tela
         char name[11];
         dados principal;
@@ -107,19 +108,19 @@ void cadastrar(){
         printf("Digite a idade do(a) aluno(a): ");
         fgets(principal.idade,10,stdin);
 
-        printf("Digite o endereÁo do(a) aluno(a): ");
+        printf("Digite o endere√ßo do(a) aluno(a): ");
         fgets(principal.endereco,300,stdin);
 
-        printf("\n===== MUSCULA«√O ====="); //1
+        printf("\n===== MUSCULA√á√ÉO ====="); //1
         printf("\n===== CROSSFIT   ====="); //2
-        printf("\n===== DAN«A      ====="); //3
+        printf("\n===== DAN√áA      ====="); //3
         printf("\n===== KARATE     ====="); //4
         printf("\n===== JIU JITSU  ====="); //5
-        printf("\n===== NATA«√O    ====="); //6
+        printf("\n===== NATA√á√ÉO    ====="); //6
         printf("\n===== IOGA       ====="); //7
         printf("\n===== PILATES    ====="); //8
         printf("\n===== JUMP       ====="); //9
-        printf("\n===== GIN¡STICA  =====\n\n");
+        printf("\n===== GIN√ÅSTICA  =====\n\n");
 
         printf("Digite a modalidade que deseja se matricular: ");
         fgets(principal.modalidade,100,stdin);
@@ -137,7 +138,7 @@ void cadastrar(){
         fprintf(arquivo,"IDADE: ");
         fputs(principal.idade,arquivo);
 
-        fprintf(arquivo,"ENDERE«O: ");
+        fprintf(arquivo,"ENDERE√áO: ");
         fputs(principal.endereco,arquivo);
 
         fprintf(arquivo,"MODALIDADE: ");
@@ -159,14 +160,14 @@ void cadastrar(){
 }
 
 /*
-	FunÁ„o que busca os dados no arquivo aberto em modo "r".
-	Digite a chave-prim·ria(CPF) e o arquivo ser· buscado, mostrar· tudo o que h· dentro do arquivo.
-	Depois que o arquivo È fechado, a funÁ„o termina e volta para o menu.
+	Fun√ß√£o que busca os dados no arquivo aberto em modo "r".
+	Digite a chave-prim√°ria(CPF) e o arquivo ser√° buscado, mostrar√° tudo o que h√° dentro do arquivo.
+	Depois que o arquivo √© fechado, a fun√ß√£o termina e volta para o menu.
 */
 void buscar(){
 
-    system("color F"); //funÁ„o - cor branco
-    setlocale(LC_ALL, "Portuguese"); //acentuaÁ„o
+    system("color F"); //fun√ß√£o - cor branco
+    setlocale(LC_ALL, "Portuguese"); //acentua√ß√£o
     int i = 0; //auxiliar do for
     char nome[15]; //nome do arquivo p/ buscar
     int numPalavras = 0;
@@ -209,8 +210,8 @@ void buscar(){
 }
 
 /*
-	FunÁ„o para excluir o aluno matriculado. O usuario digitar· o CPF para buscar o arquivo.
-	Caso o arquivo n„o exista, ele mostrar· uma mensagem de inexistencia.
+	Fun√ß√£o para excluir o aluno matriculado. O usuario digitar√° o CPF para buscar o arquivo.
+	Caso o arquivo n√£o exista, ele mostrar√° uma mensagem de inexistencia.
 */
 void excluir(){
 
@@ -226,12 +227,12 @@ void excluir(){
       printf("===============================================================\n");
 
       printf("Digite o numero do CPF que deseja excluir: ");
-      scanf("%s", &nome); //pegar arquivo pelo n˙mero do CPF
+      scanf("%s", &nome); //pegar arquivo pelo n√∫mero do CPF
 
-      printf("Tem certeza que deseja prosseguir com a exclus„o?\n(1) - SIM\n(2) - NAO\n\nOP«√O: ");
+      printf("Tem certeza que deseja prosseguir com a exclus√£o?\n(1) - SIM\n(2) - NAO\n\nOP√á√ÉO: ");
       int simounao;
       scanf("%d",&simounao);
-      if(simounao == 2){ //if pra confirmar ou n„o a exclus„o
+      if(simounao == 2){ //if pra confirmar ou n√£o a exclus√£o
         system("cls");
         return 0;
       }
@@ -239,13 +240,13 @@ void excluir(){
       arquivo = fopen(nome, "r"); //modo leitura
       fclose(arquivo);
 
-      if(arquivo == NULL){ //if pra se o arquivo n„o existir, retornar aviso
+      if(arquivo == NULL){ //if pra se o arquivo n√£o existir, retornar aviso
           printf("\nARQUIVO INEXISTENTE!\n");
       }
-      else{ //se existir chama a funÁ„o remove para excluir o arquivo
+      else{ //se existir chama a fun√ß√£o remove para excluir o arquivo
          ret = remove(nome);
 
-         if(ret == 0){ //se ret retornar 0 significa que o arquivo foi excluÌdo com sucesso
+         if(ret == 0){ //se ret retornar 0 significa que o arquivo foi exclu√≠do com sucesso
             printf("\nEXCLUIDO COM SUCESSO!\n");
          }
          else{ //tratamento de erro em caso de problema desconhecido
@@ -261,15 +262,15 @@ void excluir(){
 }
 
  /*
-	FunÁ„o para atualizar os dados em um arquivo atraves de sobrescrita,
-	utilizando o CPF como chave prim·ria para localizar o arquivo.
+	Fun√ß√£o para atualizar os dados em um arquivo atraves de sobrescrita,
+	utilizando o CPF como chave prim√°ria para localizar o arquivo.
 */
 void atualizar(){
 
-        system("color D");//funÁ„o cor-roxo.
-        setlocale(LC_ALL, "Portuguese"); //acentuaÁ„o
+        system("color D");//fun√ß√£o cor-roxo.
+        setlocale(LC_ALL, "Portuguese"); //acentua√ß√£o
         system("cls"); //limpar tela
-        char nome[12]; //CPF È a chave prim·ria para procurar o arquivo.
+        char nome[12]; //CPF √© a chave prim√°ria para procurar o arquivo.
         dados principal;
 
         printf("===============================================================\n");
@@ -279,12 +280,12 @@ void atualizar(){
         printf("Digite o CPF do aluno que deseja atualizar os dados: ");
         scanf("%s", &nome); //usuario digita o CPF para procurar o arquivo
 
-        printf("AtenÁ„o!\nPara atualizar um cadastro È necessario sobrescrever o arquivo original.\n");
-        printf("Deseja continuar com a atualizaÁ„o?\n(1) - SIM\n(2) - NAO\n\nOP«√O: ");
+        printf("Aten√ß√£o!\nPara atualizar um cadastro √© necessario sobrescrever o arquivo original.\n");
+        printf("Deseja continuar com a atualiza√ß√£o?\n(1) - SIM\n(2) - NAO\n\nOP√á√ÉO: ");
         int simounao;
         scanf("%d",&simounao);
 
-        if(simounao == 2){ //caso o usu·rio desista de atualizar ele escolhe a opÁ„o 2 e ir· retornar para o menu.
+        if(simounao == 2){ //caso o usu√°rio desista de atualizar ele escolhe a op√ß√£o 2 e ir√° retornar para o menu.
             system("cls");
             return 0;
         }
@@ -292,12 +293,12 @@ void atualizar(){
             FILE *arquivo;
             arquivo = fopen(nome, "r+"); //"r+" , O arquivo deve existir e pode ser modificado.
 
-            if(arquivo == NULL){ //condiÁ„o caso o usu·rio digite um cpf que n„o exista, ele mostra a mensagem.
+            if(arquivo == NULL){ //condi√ß√£o caso o usu√°rio digite um cpf que n√£o exista, ele mostra a mensagem.
 
                 printf("ARQUIVO INEXISTENTE!\n\n");
                 system("pause");
             }
-            else{ //se o arquivo existir o dados s„o todos reescritos novamente como a funÁ„o cadastrar.
+            else{ //se o arquivo existir o dados s√£o todos reescritos novamente como a fun√ß√£o cadastrar.
 
                 system("cls"); //limpar tela.
                 fflush(stdin); //limpar buffer de memoria.
@@ -308,19 +309,19 @@ void atualizar(){
                 printf("Digite a idade do(a) aluno(a): ");
                 fgets(principal.idade,10,stdin);
 
-                printf("Digite o endereÁo do(a) aluno(a): ");
+                printf("Digite o endere√ßo do(a) aluno(a): ");
                 fgets(principal.endereco,300,stdin);
 
-                 printf("\n===== MUSCULA«√O ====="); //1
+                 printf("\n===== MUSCULA√á√ÉO ====="); //1
                  printf("\n===== CROSSFIT   ====="); //2
-                 printf("\n===== DAN«A      ====="); //3
+                 printf("\n===== DAN√áA      ====="); //3
                  printf("\n===== KARATE     ====="); //4
                  printf("\n===== JIU JITSU  ====="); //5
-                 printf("\n===== NATA«√O    ====="); //6
+                 printf("\n===== NATA√á√ÉO    ====="); //6
                  printf("\n===== IOGA       ====="); //7
                  printf("\n===== PILATES    ====="); //8
                  printf("\n===== JUMP       ====="); //9
-                 printf("\n===== GIN¡STICA  =====\n\n"); //10
+                 printf("\n===== GIN√ÅSTICA  =====\n\n"); //10
 
                 printf("Digite a modalidade que deseja se matricular: ");
                 fgets(principal.modalidade,50,stdin);
@@ -328,10 +329,10 @@ void atualizar(){
                 printf("Digite o numero/telefone do(a) aluno(a): ");
                 fgets(principal.telefone_celular,20,stdin);
 
-                fclose(arquivo); //fechar arquivo para n„o dar problema ao excluir apÛs atualizar.
+                fclose(arquivo); //fechar arquivo para n√£o dar problema ao excluir ap√≥s atualizar.
 
-                //se o arquivo n„o existir, ele ser· criado. Se j· existir, o conte˙do anterior ser· destruÌdo.
-                arquivo = fopen(nome, "w"); //modo "w" Abrir um arquivo texto para gravaÁ„o/escrita.
+                //se o arquivo n√£o existir, ele ser√° criado. Se j√° existir, o conte√∫do anterior ser√° destru√≠do.
+                arquivo = fopen(nome, "w"); //modo "w" Abrir um arquivo texto para grava√ß√£o/escrita.
 
                 fprintf(arquivo,"===============================================================");
                 fprintf(arquivo,"\n");
@@ -341,7 +342,7 @@ void atualizar(){
                 fprintf(arquivo,"IDADE: ");
                 fputs(principal.idade,arquivo);
 
-                fprintf(arquivo,"ENDERE«O: ");
+                fprintf(arquivo,"ENDERE√áO: ");
                 fputs(principal.endereco,arquivo);
 
                 fprintf(arquivo,"MODALIDADE: ");
@@ -351,8 +352,8 @@ void atualizar(){
                 fputs(principal.telefone_celular,arquivo);
                 fprintf(arquivo,"===============================================================");
 
-                fclose(arquivo); //o arquivo È fechado.
-                fflush(stdin); // o buffer de memÛria È limpo.
+                fclose(arquivo); //o arquivo √© fechado.
+                fflush(stdin); // o buffer de mem√≥ria √© limpo.
 
                 system("cls"); //limpa tela.
                 printf("===============================================================\n");
@@ -365,11 +366,11 @@ void atualizar(){
 }
 
 /*
-	FunÁ„o principal que sÛ chama a funÁ„o "menu" e a partir dela todo o sistema ser· executado.
+	Fun√ß√£o principal que s√≥ chama a fun√ß√£o "menu" e a partir dela todo o sistema ser√° executado.
 */
 int main(){
 
-    menu(); //chama a funÁ„o menu.
+    menu(); //chama a fun√ß√£o menu.
 
     return 0;
 }
